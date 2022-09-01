@@ -59,7 +59,7 @@ function full_clear_basket () {
 function clear_one_item (good_type) {
     for (i=0; i<basket.length; i++){
         if (basket[i].good.name === good_type) {
-            basket.splice(i, i+1);
+            basket.splice(i, i);
 
         } 
     }
@@ -85,14 +85,16 @@ function add_item_basket (good_type) {
 }
 
 function total_basket () {
-    let totalAmount = 0
-    let totalSum = 0
+    let totalAmoun = 0
+    let totalSu = 0
+    let totalBasket = []
     for (i=0; i<basket.length; i++) {
-        totalAmount += basket[i].amount
-        totalSum += basket[i].good.price*basket[i].amount
+        totalAmoun += basket[i].amount
+        totalSu += basket[i].good.price*basket[i].amount
     }
-    console.log(basket)
-    console.log(totalAmount, totalSum)
+    totalBasket.totalAmount = totalAmoun;
+    totalBasket.totalSum = totalSu;
+    console.log(totalBasket)
 }
 
 
