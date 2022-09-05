@@ -94,7 +94,7 @@ function total_basket () {
     }
     totalBasket.totalAmount = totalAmoun;
     totalBasket.totalSum = totalSu;
-    console.log(totalBasket)
+    return totalBasket
 }
 
 
@@ -106,7 +106,7 @@ add_item_basket('Сланцы');
 
 clear_one_item('Кроссовки')
 
-total_basket()
+console.log(total_basket())
 
 
 
