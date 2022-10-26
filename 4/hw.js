@@ -1,8 +1,8 @@
 function getPasswordChecker(password) {
     let pass = password
-    return function () {
-        validPas = 1234
-        if (pass === validPas) {
+    return function (testPas) {
+        let pas = testPas
+        if (pass === pas) {
             return true
         } else {
             return false
@@ -12,8 +12,8 @@ function getPasswordChecker(password) {
 
 // test1 = getPasswordChecker(1234)
 // test2 = getPasswordChecker(4321)
-// console.log(test1())
-// console.log(test2())
+// console.log(test1(1234))
+// console.log(test2(432))
 
 const r1 = require('readline').createInterface(process.stdin, process.stdout)
 
@@ -31,6 +31,12 @@ function question() {
             r1.close();
             console.log('Вы угадали использовав попыток - ', count)
             return
+        } else if (cmd < number) {
+            console.log('Загаданное число больше')
+            question()
+        } else {
+            console.log('Загаданное число меньше')
+            question()
         }
         count++
         console.log(count)

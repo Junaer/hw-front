@@ -26,6 +26,12 @@ async function input() {
             r1.close()
             console.log('Вы угадали число использовав попыток - ', countt )
             break
+        } else if (data < number) {
+            console.log('Загаданное число больше')
+            
+        } else {
+            console.log('Загаданное число меньше')
+            
         }
     }
 }
