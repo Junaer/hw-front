@@ -5,16 +5,15 @@ i = 0
 
 
 chatButton.addEventListener('click', (event) => {
-    console.log(event)
     chatButton.classList.add('chat-widget_active')
 })
 
 document.addEventListener('keyup', event => {
     Data = new Date();
-    if (event.key === 'Enter') {
+    if (event.key === 'Enter' ) {
         let iter = (i + 1) % valueList.length
-        console.log(iter)
         messageText = document.querySelector('.chat-widget__input')
+        if (messageText.value) {
         messages.innerHTML += `
         <div class="message message_client">
           <div class="message__time">${Data.getHours()}:${Data.getMinutes()}</div>
@@ -32,5 +31,10 @@ document.addEventListener('keyup', event => {
         </div>
       `
       i++
+      messageText.value = ''
+      messageText.placeholder = "Введите ваше сообщение"
+    }else{
+      messageText.placeholder = 'Сообщение не может быть пустым'
     }
+  }
 })
