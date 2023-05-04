@@ -1,5 +1,6 @@
 const Validator = require('./main.js');
 
+
 describe("Validator", () => {
     describe("validateUsername", () => {
       it("should return true for valid username", () => {
@@ -17,5 +18,8 @@ describe("Validator", () => {
       it("should return false if username contains special characters other than underscore and hyphen", () => {
         expect(Validator("user@name")).toBe(false);
       });
+      it('test for long error nick name', () => {
+        expect(Validator('1234Valeron11vulkan325nagibator4321')).toBe(false);
+      })
     });
   });

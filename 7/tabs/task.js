@@ -1,6 +1,5 @@
 let tabs = document.querySelectorAll('.tab')
 let contents = document.querySelectorAll('.tab__content')
-console.log(contents)
 let startIndex = 0
 tabs.forEach((tab, index) => {
     tab.addEventListener('click', () => {
